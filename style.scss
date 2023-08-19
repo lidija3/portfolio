@@ -1,0 +1,1097 @@
+$black: #1e1e1e;
+$lightgray: #f2f2f2;
+$blue: #408cff;
+
+@keyframes changeShape {
+    25% {
+        border-radius: 31% 69% 70% 50% / 30% 30% 70% 70%;
+    }
+    50% {
+        border-radius: 63% 37% 57% 43% / 38% 58% 42% 62%;
+    }
+    75% {
+        border-radius: 48% 52% 37% 63% / 62% 35% 65% 38%;
+    }
+    100% {
+        border-radius: 56% 44% 63% 37% / 30% 56% 44% 70%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    color: $black;
+}
+
+body {
+    header {
+        position: fixed;
+        width: 100%;
+        background-color: $lightgray;
+        z-index: 2;
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            height: 35px;
+
+            .logo {
+                margin-left: 20px;
+
+                a {
+                    img {
+                        width: 70px;
+                    }
+                }
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 1;
+                margin-top: 20px;
+                margin-right: 20px;
+
+                .bar {
+                    background-color: $black;
+                    width: 30px;
+                    padding: 2px;
+                    margin: 3px;
+                    transition: 0.3s;
+                }
+
+                &.active {                    
+                    .bar:nth-child(2) {
+                        opacity: 0;
+                    }
+                    .bar:nth-child(1) {
+                        transform: translateY(12px) rotate(45deg);
+                    }
+                    .bar:nth-child(3) {
+                        transform: translateY(-8px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        .mobile-nav {
+                     
+            .mobile-nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                gap: 0;
+                padding-top: 120px;
+                min-height: 100vh;
+                background-color: $lightgray;
+                width: 100%;
+                text-align: center;
+                z-index: 0;
+                transition: 0.3s;
+
+                &.active {
+                    right: 0;
+                }
+
+                .mobile-nav-item {
+                    list-style-type: none;
+                    margin: 16px 0;
+                    padding: 10px;
+                    
+                    .mobile-nav-link {
+                        text-decoration: none;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        .landing {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: $lightgray;
+
+            .social2 {
+                display: none;
+            }
+
+            .landing-container {
+                width: 90%;
+                margin-top: 60px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+
+                .info {
+                    width: 100%;
+
+                    h1 {
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+
+                    p {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                    }
+
+                    .nav-portfolio {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        a {
+                            padding: 10px 15px;
+                            border: 1px solid $black;
+                            color: $black;
+                            text-decoration: none;
+                            background: linear-gradient(to left, transparent 50%, $blue 50%) right;
+                            background-size: 210%;
+                            transition: 0.5s ease-out;
+
+                            &:hover {
+                                background-position: left;
+                            }
+                        }
+                    }
+                }
+
+                .picture {
+                    width: 280px;
+                    height: 300px;
+                    margin-top: 60px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 59% 41% 67% 60% / 31% 51% 49% 69%;
+                        animation: changeShape 20s ease-in-out alternate infinite;
+                    }
+                }
+            }
+
+            .mail {
+                display: none;
+            }
+        }
+
+        .about {
+            width: 100%;
+            margin: 70px 0;
+            scroll-margin-top: 140px;
+
+            .about-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .aboutText {
+                    width: 90%;
+
+                    .aboutTitle {
+                        text-align: center;
+                        margin-bottom: 50px;
+                    }
+
+                    p {
+                        line-height: 30px;
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+
+        .portfolio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 120px;
+            scroll-margin-top: 140px;
+
+            .portfolioTitle {
+                margin-bottom: 80px;
+            }
+
+            .thrive {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+
+                .thriveInfo {
+                    width: 90%;
+                    height: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    h3 {
+                       margin-bottom: 15px; 
+                    } 
+
+                    p {
+                        line-height: 30px;
+                    }
+
+                    .programs {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+
+                        .programsItem {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    .pageInfo {
+                        display: inline-flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 100%;
+
+                        .git {
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .liveDemo {
+                            a {
+                                text-decoration: none;
+
+                                img {
+                                    width: 18px;
+                                    transform: translateY(-3px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    .thrivePreview {
+                        width: 380px;
+                        height: 300px;
+                        border: 1px solid $lightgray;
+                        background: url('./images/thrive-preview.png') no-repeat;
+                        background-size: cover;
+                        background-position-y: 0%;
+                        transition: background 5s ease-in-out;
+                        cursor: pointer;
+                        
+                        &:hover {
+                         background-position-y: 100%;
+                        }
+                    }
+                }
+            }
+
+            .greensolar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+                width: 100%;
+                margin-top: 80px;
+
+                a {
+                    .greensolarPreview {
+                        width: 380px;
+                        height: 300px;
+                        border: 1px solid $lightgray;
+                        background: url('./images/greensolar-preview.png') no-repeat;
+                        background-size: cover;
+                        background-position-y: 0%;
+                        transition: background 4s ease-in-out;
+                        cursor: pointer;
+                        
+                        &:hover {
+                            background-position-y: 100%;
+                        }
+                    }
+                }
+
+                .greensolarInfo {
+                    width: 90%;
+                    height: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    h3 {
+                       margin-bottom: 15px; 
+                    } 
+
+                    p {
+                        line-height: 30px;
+                    }
+
+                    .programs {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+
+                        .programsItem {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    .pageInfo {
+                        display: inline-flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 100%;
+
+                        .git {
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .liveDemo {
+                            a {
+                                text-decoration: none;
+
+                                img {
+                                    width: 18px;
+                                    transform: translateY(-3px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chatApp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 80px;
+
+                .chatAppInfo {
+                    width: 90%;
+                    height: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    h3 {
+                       margin-bottom: 15px; 
+                    }
+
+                    p {
+                        line-height: 30px;
+                    } 
+
+                    .programs {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+
+                        .programsItem {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    .pageInfo {
+                        display: inline-flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 100%;
+
+                        .git {
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .liveDemo {
+                            a {
+                                text-decoration: none;
+
+                                img {
+                                    width: 18px;
+                                    transform: translateY(-3px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    .chatAppPreview {
+                        width: 380px;
+                        height: 300px;
+                        border: 1px solid $lightgray;
+                        background: url('./images/chatapp-preview.png') no-repeat center;
+                        background-size: cover;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .portfolioPage {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+                width: 100%;
+                margin-top: 80px;
+
+                a {
+                    .portfolioPreview {
+                        width: 380px;
+                        height: 300px;
+                        border: 1px solid $lightgray;
+                        background: url('./images/portfolio-preview.png') no-repeat;
+                        background-size: cover;
+                        background-position-y: 0%;
+                        transition: background 5s ease-in-out;
+                        cursor: pointer;
+                        
+                        &:hover {
+                         background-position-y: 100%;
+                        }
+                    }
+                }
+
+                .portfolioInfo {
+                    width: 90%;
+                    height: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    h3 {
+                       margin-bottom: 15px; 
+                    } 
+
+                    p {
+                        line-height: 30px;
+                    }
+
+                    .programs {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+
+                        .programsItem {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    .pageInfo {
+                        display: inline-flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 100%;
+
+                        .git {
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .liveDemo {
+                            a {
+                                text-decoration: none;
+
+                                img {
+                                    width: 18px;
+                                    transform: translateY(-3px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 240px;
+            margin-bottom: 160px;
+
+            .contactTitle {
+                margin: 80px 0;
+            }
+
+            p {
+                width: 90%;
+                margin: 10px 0;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            .sayHello {
+                margin: 25px 0;
+
+                a {
+                    padding: 10px 25px;
+                    border: 1px solid $black;
+                    color: $black;
+                    text-decoration: none;
+                    background: linear-gradient(to left, transparent 50%, $blue 50%) right;
+                    background-size: 220%;
+                    transition: 0.5s ease-out;
+
+                    &:hover {
+                        background-position: left;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 60px;
+
+        .footer-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+
+            .socialFooter {
+                display: flex;
+                justify-content: space-evenly;
+                width: 90%;
+                border-top: 2px solid $black;
+                border-bottom: 2px solid $black;
+                padding: 40px 0;
+
+                .linkedin {
+                    a {
+                        text-decoration: none;
+                        color: $black;
+                        font-size: 16px;
+
+                        i {
+                            transform: translateY(-1px);
+                        }
+
+                        span {
+                            margin-left: 5px;    
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            color: $blue;
+                        }
+                    }
+                }
+
+                .github {
+                    a {
+                        text-decoration: none;
+                        color: $black;
+                        font-size: 16px;
+
+                        span {
+                            margin-left: 5px;    
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+
+            .logoFooter {
+
+                a {
+                    img {
+                        width: 90px;
+                    }
+                }
+            }
+
+            .contactFooter {
+                display: none;
+            }
+        }
+    }
+}
+
+// za kompjutere //
+
+@media screen and (min-width: 811px) and (min-height: 500px) {
+    body {
+        header {          
+            nav {
+                height: 70px;
+    
+                .logo {
+                    margin-left: 40px;
+                }
+    
+                .nav-menu {
+                    display: flex;
+                    list-style-type: none;
+                    margin-right: 40px;
+    
+                    li {
+                        margin: 20px;
+    
+                        a {
+                            text-decoration: none;
+                            color: $black;
+    
+                            &:hover {
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+
+                .hamburger {
+                    display: none;
+                }
+            }
+
+            .mobile-nav {
+                display: none;
+            }
+        }
+    
+        main {
+            .landing {    
+                .social2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: fixed;
+                    top: 50%;
+                    left: 5%;
+    
+                    a {
+                        &:first-of-type {
+                            margin-top: 60px;
+                            margin-bottom: 20px;
+                        }
+    
+                        i {
+                            transition: transform ease 0.5s; 
+    
+                            &:hover {
+                                color: $blue;
+                                transform: translate(0, -5px);
+                            }
+                        }
+                    }
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        top: 155px;
+                        height: 211px;
+                        width: 2px;
+                        background: $black;
+                    }
+                }
+    
+                .landing-container {
+                    margin-top: 40px;
+                    flex-direction: row;
+    
+                    .info {
+                        width: 45%;
+    
+                        h1 {
+                            text-align: left;
+                        }
+    
+                        p {
+                            width: 70%;
+                            text-align: left;
+                        }
+    
+                        .nav-portfolio {
+                            justify-content: left;
+                        }
+                    }
+    
+                    .picture {
+                        width: 380px;
+                        height: 400px;
+                        margin-top: 0;
+                    }
+                }
+    
+                .mail {
+                    display: block;
+                    position: fixed;
+                    top: 35%;
+                    right: 5%;
+                    writing-mode: vertical-rl;
+                    font-weight: bold;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+    
+                    .mailText {
+                        transition: transform ease 0.5s;
+                        margin-bottom: 0;
+                        line-height: 0;
+    
+                        a {
+                            text-decoration: none;
+                            color: $black;
+    
+                            &:hover {
+                                color: $blue;
+                            }
+                        }
+                        
+                        &:hover {
+                            transform: translate(0, -5px);
+                        }
+                    }
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 42%;
+                        top: 220px;
+                        height: 257px;
+                        width: 2px;
+                        background: $black;
+                        transform: translateX(-2px);
+                    }
+                }
+            }
+    
+            .about {
+                height: 100vh;
+                scroll-margin-top: 0;
+                margin: 10px 0;
+    
+                .about-container {    
+                    .aboutText {
+                        width: 50%;
+    
+                        .aboutTitle {
+                            text-align: center;
+                            margin-bottom: 50px;
+                        }
+    
+                        p {
+                            line-height: 30px;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+    
+            .portfolio {
+                .portfolioTitle {
+                    margin-bottom: 100px;
+                }
+    
+                .thrive {
+                    flex-direction: row;
+                    width: 60%;
+
+                    .thriveInfo {
+                        width: 50%;
+                        margin-right: 50px;
+                    }
+
+                    a {
+                        .thrivePreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                .greensolar {
+                    flex-direction: row;
+                    width: 60%;
+                    margin-top: 180px;
+    
+                    .greensolarInfo {
+                        width: 50%;
+                        margin-left: 50px;
+                    }  
+                    
+                    a {
+                        .greensolarPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+    
+                .chatApp {
+                    flex-direction: row;
+                    width: 60%;
+                    margin-top: 180px;
+    
+                    .chatAppInfo {
+                        width: 50%;
+                        margin-right: 50px;
+                    }
+
+                    a {
+                        .chatAppPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+    
+                .portfolioPage {
+                    flex-direction: row;
+                    width: 60%;
+                    margin-top: 180px;
+    
+                    .portfolioInfo {
+                        width: 50%;
+                        margin-left: 50px;
+                    }
+
+                    a {
+                        .portfolioPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .contact {
+                p {
+                    width: 50%;
+                }
+            }
+        }
+
+        footer {
+            margin-bottom: 40px;
+    
+            .footer-container {
+                width: 85%;
+                flex-direction: row;
+    
+                .socialFooter {
+                    width: 40%;
+                }
+    
+                .contactFooter {
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 40%;
+                    border-top: 2px solid $black;
+                    border-bottom: 2px solid $black;
+                    padding: 40px 0;
+    
+                    .locationFooter {
+                        margin-right: 10px;
+    
+                        .locationF {
+                            a {
+                                text-decoration: none;
+    
+                                img {
+                                    width: 30px;
+                                    transform: translateY(-3px);
+    
+                                    span {
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            span {
+                                color: $blue;
+                            }
+                        }
+                    }
+    
+                    .mailFooter {
+                        .mailF {
+                            a {
+                                color: $black;
+                                text-decoration: none;
+    
+                                img {
+                                    width: 30px;
+                                    transform: translateY(-3px);
+                                    margin-right: 5px;
+                                }
+                            }
+    
+                            &:hover {
+                                span {
+                                    color: $blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Za landscape */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        header {
+            .mobile-nav {
+                .mobile-nav-menu {
+                    padding-top: 30px;
+                }
+            }
+        }  
+
+        main {
+            .landing {    
+                .landing-container {
+                    margin-top: 50px;
+                    justify-content: space-around;
+                    flex-direction: row;
+    
+                    .info {
+                        width: 60%;
+    
+                        h1 {
+                            text-align: left;
+                        }
+    
+                        p {
+                            text-align: left;
+                        }
+    
+                        .nav-portfolio {
+                            justify-content:left;
+                        }
+                    }
+    
+                    .picture {
+                        margin-bottom: 40px;
+                    }
+                }
+            }   
+    
+            .portfolio {
+                .thrive {
+                    flex-direction: row;
+                    width: 90%;
+    
+                    .thriveInfo {
+                        width: 60%;
+                        margin-right: 20px;
+                    }
+
+                    a {
+                        .thrivePreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                .greensolar {
+                    flex-direction: row;
+                    width: 90%;
+                    margin-top: 80px;
+    
+                    .greensolarInfo {
+                        width: 60%;
+                        margin-left: 20px;
+                    } 
+                    
+                    a {
+                        .greensolarPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+    
+                .chatApp {
+                    flex-direction: row;
+                    width: 90%;
+                    margin-top: 80px;
+    
+                    .chatAppInfo {
+                        width: 60%;
+                        margin-right: 20px;
+                    }
+
+                    a {
+                        .chatAppPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+    
+                .portfolioPage {
+                    flex-direction: row;
+                    width: 90%;
+                    margin-top: 80px;
+    
+                    .portfolioInfo {
+                        width: 60%;
+                        margin-left: 20px;
+                    }  
+
+                    a {
+                        .portfolioPreview {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+    
+            .contact {
+                margin-top: 200px;
+                scroll-margin-top: 140px;
+            }
+        }
+    }
+}
+
