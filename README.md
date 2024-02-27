@@ -10,4 +10,4 @@ You can browse through my page, discover more about me, my journey, and the uniq
 
 ## Preview
 
-![portfolio-preview](https://github.com/lidija3/portfolio/assets/122623282/6de97745-feb4-414c-924e-60bb62ff8d36)
+![portfolio-preview](https://github.com/lidija3/portfolio/assets/122623282/8e51da5c-a302-498e-96fe-99207a8bc46e)
